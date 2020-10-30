@@ -24,16 +24,36 @@ $H_0$: The Null Hypothesis is that among the target population, the vaccine has 
 
 $H_A$: The Alternative Hypothesis is that among the target population, the vaccine has an effect on whether they contract the virus or not.  
 
-
-
 # Methods
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method. Discuss what data manipulations may be needed for example subsetting or other binning procedures and what sort of graphical displays and inferential tools will be used!-->
 
-# Results
+Every question is of a Cat~Cat type.
+
+## Results
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
+#### Female Graphical Results  
+
+```{r}
+dataf = filter(FinalData, sex=="gal")
+barchartGC(~infected + treatment,data=dataf)
+barchartGC(~infected + treatment,data=dataf, type="percent", main="Female")
+```
+
+Among the females who had COVID-19, It appears that those who had COVID-19 and took the drug, the vaccine does have an positive effect.  
+  
+
+#### Male Graphical Results  
+
+```{r}
+datag = filter(FinalData, sex=="guy")
+barchartGC(~infected + treatment,data=datag)
+barchartGC(~infected + treatment,data=datag, type="percent", main="Male")
+```
+
+Among the males who had COVID-19, it appears those who had took vaccine has a negative effect in that the males who take the vaccine will be more likely to get COVID-19.  
 
 
 # Discussion and Conclusion
