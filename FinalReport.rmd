@@ -56,6 +56,28 @@ barchartGC(~infected + treatment,data=datag, type="percent", main="Male")
 Among the males who had COVID-19, it appears those who had took vaccine has a negative effect in that the males who take the vaccine will be more likely to get COVID-19.  
 
 
+#### LGBTQ Graphical Results
+
+```{r}
+datal= filter(FinalData, LGBTQ=="gay")
+barchartGC(~infected + treatment,data=datal)
+barchartGC(~infected + treatment,data=datal, type="percent", main="LGBTQ")
+```
+
+Among the LGBTQ community who had COVID-19, it appears those who had took the vaccine has a negative effect in that those in the LGBTQ community who has taken it will be more likely to get COVID-19.  
+
+
+### Drug User Graphical Results
+
+```{r}
+datad = filter(FinalData, DrugUser=="yes")
+barchartGC(~infected + treatment,data=datag)
+barchartGC(~infected + treatment,data=datag, type="percent", main="Drug User")
+```
+
+Among those who do drugs that also had COVID-19, it appears those who had took the vaccine has a negative effect in that they will be more likely to get COVID-19.  
+
+
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
