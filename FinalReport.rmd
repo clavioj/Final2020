@@ -77,7 +77,93 @@ barchartGC(~infected + treatment,data=datag, type="percent", main="Drug User")
 
 Among those who do drugs that also had COVID-19, it appears those who had took the vaccine has a negative effect in that they will be more likely to get COVID-19.  
 
+## Numerical & Inferential Summaries for each subpopulation
+
+
+
+
+## Female Numerical and Inferential Summary
+```{r}
+table1 <- xtabs(~infected + treatment, data=dataf)
+rowPerc(table1)
+colPerc(table1)
+```
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+#### Based on the numerical chart, it says that those who take the drug ended up doing better than those who did not.  
+#### The P-Value for this data is 0.00000000000000022.
+
+
+
+## Male Numerical and Inferential Summary
+```{r}
+table1 <- xtabs(~infected + treatment, data=datag)
+rowPerc(table1)
+colPerc(table1)
+```
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+#### The males who taken the placebo drug were better than those who had taken the drug.  
+#### The P-Value for males is at 0.0005801.
+
+
+
+
+
+## LGBTQ Numerical and inferential Summary
+```{r}
+table1 <- xtabs(~infected + treatment, data=datal)
+rowPerc(table1)
+colPerc(table1)
+```
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+#### The LGBTQ community that had taken the placebo statistically did better than the one who had treatment.  
+#### The P-Value for LGBTQ is 0.000005741.
+
+
+
+
+
+## Drug User Numerical and inferential Summary
+```{r}
+table1 <- xtabs(~infected + treatment, data=datad)
+rowPerc(table1)
+colPerc(table1)
+```
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+#### The drug users who took the drug did worse than those who did not.  
+#### The P-Value for drug users in this data is 0.000005741.
+
+
 
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+
+With our data, we found that the p-value for all subpoplutions were way below our threshold of 0.05. Therefor in all subpopulation, we reject the Null hypothesis and accept the alternative in that among the target population, the vaccine has an effect on whether they contract the virus or not.  
+  
+For females, the vaccine had a positive effect against covid.   
+  
+For males, the vaccine had a negative effect in that they had a negative effect against covid.  
+   
+For the LGBTQ community, the vaccine has a negative effect.  
+  
+Lastly, the drug users also had a negative effect against covid.  
+  
+
